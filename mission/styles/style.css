@@ -2,7 +2,14 @@ body {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+    justify-content: center;
+}
+
+.content {
     border: 1px solid black;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 h2 {
