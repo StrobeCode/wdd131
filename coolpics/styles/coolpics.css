@@ -96,6 +96,10 @@ button {
      li {
         display: none;
      }
+
+    button {
+        padding-bottom: 8px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
