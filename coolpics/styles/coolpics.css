@@ -58,14 +58,16 @@ h1, h2, h3 {
     padding: 2%;
 }
 
-img {
+.gallery img {
     max-width: 100%;
     height: 250px;
     width: 250px;
     object-fit: cover;
     border: 7px solid white;
     box-shadow: 8px 8px 15px rgba(0,0,0,0.9);
+    cursor: pointer;
 }
+
 
 button {
     background: none;
@@ -89,16 +91,68 @@ button {
     font-size: 1.5em;
 }
 
+.hide {
+    display: none;
+}
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-rows: auto 1fr;  /* First row for the close button, second for the image */
+    grid-template-columns: 1fr;
+    place-items: center;
+    z-index: 10;
+    color: white;
+    padding: 20px;
+    gap: 10px;
+    overflow: hidden;  /* Prevent content overflow */
+    max-width: 90vw;    /* Limit width to viewport width */
+    max-height: 90vh;   /* Limit height to viewport height */
+    margin: auto;       /* Center the modal */
+    border-radius: 10px;
+}
+
+.viewer img {
+    max-height: 100%;  /* Restrict image to fit within the viewer */
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;  /* Maintain image aspect ratio */
+    align-self: center;   /* Center image vertically */
+    grid-row: 2;          /* Place the image in the second row */
+    grid-column: 1;       /* Align image to the first column */
+}
+
+.close-viewer {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    justify-self: end;    /* Align close button to the right */
+    z-index: 11;
+    padding: 10px;
+    grid-row: 1;          /* Place the close button in the first row */
+    grid-column: 1;       /* Align close button to the first column */
+}
+
+
 @media screen and (min-width: 700px) {
     .gallery {
         grid-template-columns: 1fr 1fr;
     }
-     li {
-        display: none;
-     }
 
-    button {
-        padding-bottom: 8px;
+    .viewer img {
+        max-height: 90%;
+        max-width: 90%;
+        padding: 20px;
+        place-self: center;
+        object-fit: cover;
     }
 }
 
@@ -107,7 +161,7 @@ button {
         grid-template-columns: 1fr 1fr 1fr;
     }
     
-    button {
+    .menu-button {
         display: none;
     }
     
@@ -115,5 +169,34 @@ button {
         display: inline;
         padding-left: 30px;
         padding-right: 30px;
+    }
+
+    .hide {
+        display: inline;
+    }
+
+    .viewer img {
+        max-height: 70%;
+        max-width: 70%;
+        padding: 20px;
+        place-self: center;
+        object-fit: cover;
+        padding-bottom: 10px;
+    }
+
+    .viewer {
+        width:92%;
+        height: 92%;
+        margin: auto;
+        place-self: center;
+        object-fit: cover;
+    }
+
+    .close-viewer {
+        font-size: 2em;
+        padding: 5px;
+        align-self: start;
+        justify-self: end;
+
     }
 }
