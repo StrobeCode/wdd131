@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+:root {
+    --headline: #af1b3f;
+    --link: #af1b3f;
+    --gold: #efc69b;
+    --dark: #473133;
+    --border: #832329;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--dark);
+}
+
+h1 {
+    color: var(--dark);
+    font-family: "Lora", serif;
+    text-align: center;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: "Lora", serif;
+    color: var(--headline);
+}
+
+a {
+    color: var(--link);
+    font-size: 1.25rem;
+}
+
+/* Navigation styles */
+nav > ul {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    justify-content: end;
+    justify-items: end;
+    list-style-type: none;
+    max-width: 90%;
+}
+
+nav {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Main layout */
+main {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    padding: 1rem 2rem;
+}
+
+/* Book section */
+.book {
+    min-width: 380px;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+}
+
+.book-details {
+    border-right: 1px solid var(--border);;
+    padding-top: 1.8rem;
+}
+/* Book image */
+.book-image {
+    display: block;
+    justify-self: center;
+}
+
+.book-description {
+    padding-left: 1rem;
+}
+
+/* Filter section */
+.filter-section {
+    max-width: 150px;
+    max-height: 300px;
+    border: 1px solid var(--border);
+}
+
+.skiptocontent a {
+    position: absolute;
+    left: -999px;
+    top: 10px;
+    background: #af1b3f;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skiptocontent a:focus {
+    left: 10px;
+    outline: 2px solid white;
+}
