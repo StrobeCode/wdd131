@@ -1,20 +1,25 @@
 const PI = 3.14;
-let area = 0;
-function circleArea(radius) {
-    return radius * radius * PI;
-}
+let radius = 3;
 
-area = circleArea(3);
+let area = PI * radius * radius;
+
 console.log(area);
 
-area = circleArea(5);
+radius = 20;
+area = PI * radius * radius;
+
 console.log(area);
 
-area = circleArea(8);
-console.log(area);
+const one = 1;
+const two = '2';
+
+let result = one * two;
+console.log(result);
+
+result = one + Number(two);
+console.log(result);
 
 
-// Scope Example
 let course = "CSE131"; //global scope
 if (true) {
     let student = "John";
