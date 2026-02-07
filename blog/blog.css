@@ -30,7 +30,7 @@ a {
     font-size: 1.25rem;
 }
 
-/* Navigation styles */
+
 nav > ul {
     display: grid;
     grid-template-columns: 80px 80px 80px;
@@ -45,14 +45,14 @@ nav {
     border-bottom: 1px solid var(--border);
 }
 
-/* Main layout */
+
 main {
     display: grid;
     grid-template-columns: 80% 20%;
     padding: 1rem 2rem;
 }
 
-/* Book section */
+
 .book {
     min-width: 380px;
     display: grid;
@@ -63,7 +63,7 @@ main {
     border-right: 1px solid var(--border);;
     padding-top: 1.8rem;
 }
-/* Book image */
+
 .book-image {
     display: block;
     justify-self: center;
