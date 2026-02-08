@@ -41,25 +41,29 @@ const articles = [
 
 const mainContent = document.querySelector('#main-content');
 
-function renderArticles(article) {
-    return `<article class="book">
-            <section class="book-details">
-                <div>${article.date}</div>
-                <div>${article.ages}</div>
-                <div>${article.genre}</div>
-                <div>${article.stars}</div>
-            </section>
-            
-            <section class="book-description">
-                <h2>${article.title}</h2>
-                <img class="book-image" 
-                     src="${article.imgSrc}" 
-                     alt="${article.imgAlt}" />
-                <p>${article.description}</p>
-            </section>
-        </article>`;
+function renderArticles(article, index) {
+  const isLcp = index === 0;
+
+  return `<article class="book">
+      <section class="book-details">
+          <div>${article.date}</div>
+          <div>${article.ages}</div>
+          <div>${article.genre}</div>
+          <div>${article.stars}</div>
+      </section>
+
+      <section class="book-description">
+          <h2>${article.title}</h2>
+          <img class="book-image"
+               src="${article.imgSrc}"
+               alt="${article.imgAlt}"
+               ${isLcp ? 'fetchpriority="high" loading="eager" decoding="async"' : 'loading="lazy" decoding="async"'} />
+          <p>${article.description}</p>
+      </section>
+  </article>`;
 }
 
 mainContent.innerHTML = articles.map(renderArticles).join("");
+
 
 
