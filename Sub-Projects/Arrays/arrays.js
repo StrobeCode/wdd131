@@ -1,39 +1,113 @@
 const steps = ["one", "two", "three"];
-function listTemplate(step) {
-  return `<li>${step}</li>`//the html string made from step
-}
-const stepsHtml = steps.map(listTemplate);// use map to convert the list from strings to HTML
-// document.querySelector("#myList").innerHTML = stepsHtml.join("");
 
-const grades = ['A', 'B', 'A']
+steps.forEach(showSteps);
 
-function gpa(grade) {
-    let points = 0;
-    if (grade === 'A') {
-        points = 4;
-    } else if (grade === 'B') {
-        points = 3;
+function showSteps(step){
+    console.log(step);
+};
+
+//.map
+
+let myList = document.querySelector("#myList");
+
+const stepsHtml = steps.map(listTemplate);
+
+function listTemplate(item) {
+    return `<li>${item}</li>`;  // "<li>"+item+"</li>";
+};
+
+myList.innerHTML = stepsHtml.join('');
+
+let grades = ['A', 'B', 'C'];
+let points;
+
+let gpaPoints = grades.map(convert)
+
+function convert(grade) {
+    switch (grade){
+        case 'A':
+            points = 4;
+            break;
+        case 'B':
+            points = 3;
+            break;
+        case 'C':
+            points = 2;
+            break;
+        case 'D':
+            points = 1;
+            break;
+        case 'F':
+            points = 0;
+            break;
+        default:
+            alert('not a valid grade');
     }
     return points;
-    
 }
 
-const gpaPoints = grades.map(gpa);
-console.log(gpaPoints);
-const pointsTotal = gpaPoints.reduce(function (total, item) {
+console.log(gpaPoints)
+          
+//.reduce
+
+let totalPoints = gpaPoints.reduce(getTotal);
+
+function getTotal(total, item){
     return total + item;
-  });
-  const gpaAverage = pointsTotal / gpaPoints.length;
-  console.log(gpaAverage);
-  
-const fruits = ['watermelon', 'peach', 'apple', 'tomato', 'grape']
+}
 
-const sixFruits = fruits.filter(function (fruit) {
-    return fruit.length < 6;
-    });
-    console.log(sixFruits);
+console.log(totalPoints);
 
-const numbers = [12, 34, 21, 54];
-const LuckyNumber = 21;
-let LuckyIndex = numbers.indexOf(LuckyNumber);
-console.log(LuckyIndex);
+let gpaAverage = totalPoints / gpaPoints.length;
+console.log(gpaAverage);
+
+//.filter
+
+const words = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
+
+const shortWords = words.filter(function(word){
+    return word.length < 6;
+})
+
+console.log(shortWords);
+
+//.indexOf
+
+const myArray = [12, 34, 21, 54];
+const luckyNumber = 21;
+let luckyIndex = myArray.indexOf(luckyNumber);
+console.log(luckyIndex);
+
+let container = document.querySelector('#studentContainer');
+
+const students = [
+    {
+        last: 'Andrus',
+        first: 'Aaron'
+    },
+    {
+        last: 'Masa',
+        first: 'Manny'
+    },
+    {
+        last: 'Tanda',
+        first: 'Tamanda'
+    }
+];
+
+students.forEach(function(item){
+    let name = document.createElement('div');
+    name.className = 'format';
+
+    let html = `
+    <span>${item.first}</span>
+    <span>${item.last}</span>
+    <hr>
+    `;
+
+    name.innerHTML = html;
+    container.appendChild(name);
+
+})
+
+
