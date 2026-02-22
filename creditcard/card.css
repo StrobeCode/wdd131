@@ -1,0 +1,151 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+.page {
+  width: min(900px, 94vw);
+  margin: 40px auto;
+}
+
+.cards {
+  position: relative;
+  width: min(520px, 100%);
+  height: 290px;
+  margin: 0 auto;
+}
+
+
+.card {
+  position: absolute;
+  width: 420px;
+  max-width: 100%;
+  height: 210px;
+  background: #d9d9d9;
+  border: 1px solid #b5b5b5;
+  border-radius: 6px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.35);
+  padding: 16px;
+}
+
+.card-front {
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  grid-template-areas:
+    "total symbol"
+    "number number"
+    "holder exp";
+  gap: 12px;
+}
+
+.total {
+  grid-area: total;
+  margin: 0;
+  font-size: 14px;
+}
+
+.symbol {
+  grid-area: symbol;
+  justify-self: end;
+  font-size: 20px;
+}
+
+.field { min-width: 0; }
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background: #fff;
+  font-size: 13px;
+}
+
+.number { grid-area: number; }
+.holder { grid-area: holder; }
+.exp { grid-area: exp; }
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+
+.card-back {
+  top: 60px;
+  left: 90px;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  grid-template-rows: auto 1fr;
+}
+
+.stripe {
+  grid-column: 1 / -1;
+  height: 36px;
+  background: #111;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.cvc {
+  grid-column: 2 / 3;
+  align-self: start;
+  margin-top: 8px;
+  margin-left: 70px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+  padding-right: 2px;
+}
+
+.actions {
+  width: min(520px, 100%);
+  margin: 14px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: 2px solid #666;
+  border-radius: 8px;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.btn:hover { background: #e7e7e7; }
+
+.message {
+  width: min(520px, 100%);
+  margin: 12px auto 0;
+  min-height: 20px;
+  font-size: 14px;
+}
+
+
+@media (max-width: 560px) {
+  .cards { height: 320px; }
+  .card-back {width: 70%;}
+  .card-front {width: 70%;}
+}
