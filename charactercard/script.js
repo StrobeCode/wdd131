@@ -3,7 +3,7 @@ const character = {
   class: "Swamp Beast Diplomat",
   level: 8,
   health: 100,
-  image: "images/Snortleblat.png",
+  image: "images/snortleblat.png",
   isDead: false,
 
   attacked() {
