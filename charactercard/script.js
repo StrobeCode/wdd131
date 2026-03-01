@@ -1,7 +1,7 @@
 const character = {
   name: "Snortleblat",
   class: "Swamp Beast Diplomat",
-  level: 8,
+  level: 5,
   health: 100,
   image: "images/snortleblat.png",
   isDead: false,
