@@ -378,6 +378,12 @@ section {
     color: #1D3557;
 }
 
+.intro-text {
+    font-size: 1.2rem;
+    color: #1D3557;
+    margin-bottom: 0.5rem;
+}
+
 @media screen and (min-width: 768px) {
     #menu-icon {
         display: none;
