@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "img/music.png",
             alt: "Music icon",
             link: "https://github.com/StrobeCode/dynamic-frequency-harmonizer",
-            description: "A personal programming project involving audio and frequency-based processing."
+            description: "A personal programming projec t involving audio and frequency-based processing."
         }
     ];
 
